@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.pjatk.jazs2135443cnbp.repository.CurrencyRepository;
 
+import java.time.LocalDate;
+
 @Service
 public class CurrencyService {
     private final CurrencyRepository currencyRepository;
@@ -14,9 +16,13 @@ public class CurrencyService {
         this.restTemplate = restTemplate;
     }
 
-//    public Double getTables(String currencyName, String startDate, String endDate) {
-//        String resourceUrl = "https://api.nbp.pl/api/exchangerates/tables/a/2015-01-01/2015-01-05/" + currencyName + "/" + startDate + "/" + endDate +
-//                "/?format=json";
-//
-//    }
+    public void getTables(String startDate, String endDate) {
+        String resourceUrl = "https://api.nbp.pl/api/exchangerates/tables/a/" + "/" + startDate + "/" + endDate +
+                "/?format=json";
+
+        LocalDate start = LocalDate.parse(startDate);
+        LocalDate end = LocalDate.parse(endDate);
+    }
+
+
 }

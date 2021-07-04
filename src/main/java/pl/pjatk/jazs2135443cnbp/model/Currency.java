@@ -21,15 +21,18 @@ public class Currency {
     private LocalDate startDate;
     @ApiModelProperty(notes = "Data końcowa", required = true, dataType = "LocalDate")
     private LocalDate endDate;
-    @ApiModelProperty(notes = "średnia wartość", required = true, dataType = "double")
-    private double avarageValue;
+    @ApiModelProperty(notes = "Data wyszukiwania", required = true, dataType = "LocalDate")
+    private LocalDate searchDate;
+    @ApiModelProperty(notes = "Godzina wyszukiwania", required = true, dataType = "LocalDate")
+    private LocalDate searchTime;
 
-    public Currency(Long id, String currencyName, LocalDate startDate, LocalDate endDate, double avarageValue) {
+    public Currency(Long id, String currencyName, LocalDate startDate, LocalDate endDate, LocalDate searchDate, LocalDate searchTime) {
         this.id = id;
         this.currencyName = currencyName;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.avarageValue = avarageValue;
+        this.searchDate = searchDate;
+        this.searchTime = searchTime;
     }
 
     public Currency() {
@@ -67,11 +70,19 @@ public class Currency {
         this.endDate = endDate;
     }
 
-    public double getAvarageValue() {
-        return avarageValue;
+    public LocalDate getSearchDate() {
+        return searchDate;
     }
 
-    public void setAvarageValue(double avarageValue) {
-        this.avarageValue = avarageValue;
+    public void setSearchDate(LocalDate searchDate) {
+        this.searchDate = searchDate;
+    }
+
+    public LocalDate getSearchTime() {
+        return searchTime;
+    }
+
+    public void setSearchTime(LocalDate searchTime) {
+        this.searchTime = searchTime;
     }
 }

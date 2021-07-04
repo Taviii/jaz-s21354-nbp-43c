@@ -2,12 +2,11 @@ package pl.pjatk.jazs2135443cnbp.model;
 
 import java.util.List;
 
-public class Root{
+public class Root {
     public String table;
     public String no;
     public String effectiveDate;
     public List<Rate> rates;
-
 
     public Root(String table, String no, String effectiveDate, List<Rate> rates) {
         this.table = table;
